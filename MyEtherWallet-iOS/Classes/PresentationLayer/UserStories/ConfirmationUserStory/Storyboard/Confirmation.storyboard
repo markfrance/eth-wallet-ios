@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dSU-dI-qOt">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Confirmation Navigation View Controller-->
+        <scene sceneID="OEM-9P-bb2">
+            <objects>
+                <navigationController storyboardIdentifier="TransactionViewController" navigationBarHidden="YES" id="dSU-dI-qOt" customClass="ConfirmationNavigationViewController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jlT-a1-amU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XFV-L1-tpZ" kind="relationship" relationship="rootViewController" id="Ked-Sm-tiU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2o1-pP-F4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="-352"/>
+        </scene>
+        <!--Transaction View Controller-->
+        <scene sceneID="tRa-WY-dfr">
+            <objects>
+                <viewController id="XFV-L1-tpZ" customClass="TransactionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jc1-Do-gqv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-2L-PhO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDj-4s-pbA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="712.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZO-L9-lI5" customClass="FlatButton">
+                                                <rect key="frame" x="24" y="632.5" width="136" height="56"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="DECLINE">
+                                                    <color key="titleColor" red="0.83921568627450982" green="0.023529411764705882" blue="0.023529411764705882" alpha="1" colorSpace="deviceRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="theme">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="compact" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="declineAction:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="QXr-io-RNi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="56" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-ph-v1O" customClass="FlatButton">
+                                                <rect key="frame" x="175" y="632.5" width="176" height="56"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="CONFIRM">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="theme">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="compact" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmAction:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="xHa-h7-dtb"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Th-YD-m1u">
+                                                <rect key="frame" x="24" y="44" width="211.5" height="95.5"/>
+                                                <string key="text">Verify
+transaction</string>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <color key="textColor" red="0.023529411764705882" green="0.30196078431372547" blue="0.83921568627450982" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xZA-gg-ep6">
+                                                <rect key="frame" x="16" y="159.5" width="343" height="368"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="112" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLT-yv-JDm" customClass="CheckboxButton" customModule="MyEtherWallet_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="112"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="confirmNetwork:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="aMA-YW-jqT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="112" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIY-vJ-qAa" customClass="CheckboxButton" customModule="MyEtherWallet_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="128" width="343" height="112"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="confirmAddress:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="7Vx-nV-WVe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="112" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1M-Mb-kKC" customClass="CheckboxButton" customModule="MyEtherWallet_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="256" width="343" height="112"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="confirmAmount:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="vEa-5E-UWg"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lA-gj-2kw">
+                                                <rect key="frame" x="24" y="545.5" width="327" height="67"/>
+                                                <string key="text">If your computer is compromised, attackers might replace ‘Send to’ address with their own, before sending your transaction. That’s why it’s important to check it in MEWconnect.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.42745098039215684" green="0.45098039215686275" blue="0.44705882352941173" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="8Th-YD-m1u" firstAttribute="top" secondItem="zDj-4s-pbA" secondAttribute="top" constant="44" id="1xY-Ww-ghs"/>
+                                            <constraint firstItem="8Th-YD-m1u" firstAttribute="leading" secondItem="zDj-4s-pbA" secondAttribute="leading" constant="24" id="38o-UI-obW"/>
+                                            <constraint firstItem="ELz-ph-v1O" firstAttribute="bottom" secondItem="SZO-L9-lI5" secondAttribute="bottom" id="3yo-Id-bq4"/>
+                                            <constraint firstAttribute="trailing" secondItem="ELz-ph-v1O" secondAttribute="trailing" constant="24" id="4G2-nH-aA5"/>
+                                            <constraint firstAttribute="bottom" secondItem="SZO-L9-lI5" secondAttribute="bottom" constant="24" id="B2q-ra-qef"/>
+                                            <constraint firstItem="9lA-gj-2kw" firstAttribute="trailing" secondItem="xZA-gg-ep6" secondAttribute="trailing" constant="-8" id="Hwa-8k-j0i"/>
+                                            <constraint firstItem="ELz-ph-v1O" firstAttribute="left" secondItem="SZO-L9-lI5" secondAttribute="right" constant="15" id="PyK-2w-X5S"/>
+                                            <constraint firstAttribute="trailing" secondItem="xZA-gg-ep6" secondAttribute="trailing" constant="16" id="VMQ-Ri-MuF"/>
+                                            <constraint firstItem="SZO-L9-lI5" firstAttribute="leading" secondItem="zDj-4s-pbA" secondAttribute="leading" constant="24" id="dwb-sn-cJf"/>
+                                            <constraint firstItem="9lA-gj-2kw" firstAttribute="top" secondItem="xZA-gg-ep6" secondAttribute="bottom" constant="18" id="hld-k3-Tbi"/>
+                                            <constraint firstItem="xZA-gg-ep6" firstAttribute="leading" secondItem="zDj-4s-pbA" secondAttribute="leading" constant="16" id="i1g-f0-FpN"/>
+                                            <constraint firstItem="ELz-ph-v1O" firstAttribute="width" secondItem="SZO-L9-lI5" secondAttribute="width" constant="40" id="oGU-38-2U4"/>
+                                            <constraint firstItem="SZO-L9-lI5" firstAttribute="top" secondItem="9lA-gj-2kw" secondAttribute="bottom" constant="20" id="oWs-pT-WZf"/>
+                                            <constraint firstItem="xZA-gg-ep6" firstAttribute="top" secondItem="8Th-YD-m1u" secondAttribute="bottom" constant="20" id="xrP-Us-Ddr"/>
+                                            <constraint firstItem="9lA-gj-2kw" firstAttribute="leading" secondItem="xZA-gg-ep6" secondAttribute="leading" constant="8" id="y9c-O7-T5Y"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zDj-4s-pbA" firstAttribute="leading" secondItem="fOA-2L-PhO" secondAttribute="leading" id="38w-dQ-nAu"/>
+                                    <constraint firstItem="zDj-4s-pbA" firstAttribute="width" secondItem="fOA-2L-PhO" secondAttribute="width" id="47b-bh-Q1H"/>
+                                    <constraint firstAttribute="trailing" secondItem="zDj-4s-pbA" secondAttribute="trailing" id="R9T-lq-Mzs"/>
+                                    <constraint firstAttribute="bottom" secondItem="zDj-4s-pbA" secondAttribute="bottom" id="hpF-xz-Uf7"/>
+                                    <constraint firstItem="zDj-4s-pbA" firstAttribute="top" secondItem="fOA-2L-PhO" secondAttribute="top" id="iFS-BD-eDe"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fOA-2L-PhO" firstAttribute="top" secondItem="Jc1-Do-gqv" secondAttribute="top" id="R3a-yW-TXj"/>
+                            <constraint firstAttribute="trailing" secondItem="fOA-2L-PhO" secondAttribute="trailing" id="Vr6-mY-yUW"/>
+                            <constraint firstItem="fOA-2L-PhO" firstAttribute="leading" secondItem="Jc1-Do-gqv" secondAttribute="leading" id="k4Y-gr-d9b"/>
+                            <constraint firstAttribute="bottom" secondItem="fOA-2L-PhO" secondAttribute="bottom" id="xho-wB-1F1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aLr-uG-IND"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SEf-l5-vPx"/>
+                    <connections>
+                        <outlet property="addressCheckboxButton" destination="iIY-vJ-qAa" id="q7R-sv-BNF"/>
+                        <outlet property="amountCheckboxButton" destination="j1M-Mb-kKC" id="cP9-ue-GJl"/>
+                        <outlet property="buttonsWidthConstraint" destination="oGU-38-2U4" id="1x7-LK-OZl"/>
+                        <outlet property="confirmButton" destination="ELz-ph-v1O" id="Wmi-Fj-itJ"/>
+                        <outlet property="descriptionLabel" destination="9lA-gj-2kw" id="C2c-Ej-c0D"/>
+                        <outlet property="descriptionToButtonVerticalOffsetConstraint" destination="oWs-pT-WZf" id="f4a-2g-Z9j"/>
+                        <outlet property="interbuttonOffsetConstraint" destination="PyK-2w-X5S" id="KSB-3m-wVg"/>
+                        <outlet property="networkCheckboxButton" destination="PLT-yv-JDm" id="5Ja-H4-wLu"/>
+                        <outlet property="scrollView" destination="fOA-2L-PhO" id="uWt-PD-y9a"/>
+                        <outlet property="titleLabel" destination="8Th-YD-m1u" id="Uph-vg-3B3"/>
+                        <outlet property="titleTopOffsetConstraint" destination="1xY-Ww-ghs" id="d1B-cT-uKC"/>
+                        <segue destination="V5h-zr-lHt" kind="show" identifier="TransactionToDeclinedTransactionSegueIdentifier" id="1xX-zz-QIs"/>
+                        <segue destination="Osz-z3-Lpi" kind="show" identifier="TransactionToConfirmedTransactionSegueIdentifier" id="9FK-49-v55"/>
+                        <segue destination="Y4n-mg-mQJ" kind="presentation" identifier="TransactionToContextPasswordSegueIdentifier" id="VgU-CY-Pdz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XE3-td-mbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-352"/>
+        </scene>
+        <!--ContextPasswordViewController-->
+        <scene sceneID="RQg-ff-kZQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SplashPassword" referencedIdentifier="ContextPasswordViewController" id="Y4n-mg-mQJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RjP-r8-snu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765" y="75"/>
+        </scene>
+        <!--Decline Transaction View Controller-->
+        <scene sceneID="HhU-rQ-0X2">
+            <objects>
+                <viewController id="V5h-zr-lHt" userLabel="Decline Transaction View Controller" customClass="DeclinedTransactionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o5U-6x-a0E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mr-vE-qya">
+                                <rect key="frame" x="24" y="44" width="219" height="95.5"/>
+                                <string key="text">Transaction
+declined</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.1803921568627451" green="0.18823529411764706" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You declined the transaction and it was cancelled. If you have security concerns, please contact MEW Support" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUW-65-6Uk" customClass="LinkedLabel">
+                                <rect key="frame" x="24" y="162.5" width="327" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.45098039215686275" blue="0.51764705882352935" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outlet property="delegate" destination="V5h-zr-lHt" id="wcR-AQ-gWD"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaU-ok-Kz7" customClass="FlatButton">
+                                <rect key="frame" x="24" y="587" width="327" height="56"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" red="0.023529411764705882" green="0.30196078431372547" blue="0.83921568627450982" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="theme">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="compact" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeAction:" destination="V5h-zr-lHt" eventType="touchUpInside" id="o4z-YB-fCy"/>
+                                    <action selector="declineAction:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="R6J-Bl-n7h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5mr-vE-qya" firstAttribute="top" secondItem="C4g-Wi-cYA" secondAttribute="top" constant="44" id="1gp-v1-g9H"/>
+                            <constraint firstItem="C4g-Wi-cYA" firstAttribute="trailing" secondItem="GUW-65-6Uk" secondAttribute="trailing" constant="24" id="28O-oV-Cv8"/>
+                            <constraint firstItem="kaU-ok-Kz7" firstAttribute="left" secondItem="C4g-Wi-cYA" secondAttribute="left" constant="24" id="4dq-zo-dL3"/>
+                            <constraint firstItem="C4g-Wi-cYA" firstAttribute="bottom" secondItem="kaU-ok-Kz7" secondAttribute="bottom" constant="24" id="axl-Er-bZG"/>
+                            <constraint firstItem="C4g-Wi-cYA" firstAttribute="right" secondItem="kaU-ok-Kz7" secondAttribute="right" constant="24" id="cKl-U6-ETb"/>
+                            <constraint firstItem="GUW-65-6Uk" firstAttribute="leading" secondItem="o5U-6x-a0E" secondAttribute="leading" constant="24" id="eG4-DC-nkC"/>
+                            <constraint firstItem="5mr-vE-qya" firstAttribute="leading" secondItem="C4g-Wi-cYA" secondAttribute="leading" constant="24" id="r8U-7K-b8d"/>
+                            <constraint firstItem="GUW-65-6Uk" firstAttribute="top" secondItem="5mr-vE-qya" secondAttribute="bottom" constant="23" id="vFI-wg-VEA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C4g-Wi-cYA"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="GUW-65-6Uk" id="4hM-YY-7Uf"/>
+                        <outlet property="titleLabel" destination="5mr-vE-qya" id="f7q-pV-ezR"/>
+                        <outlet property="titleTopOffsetConstraint" destination="1gp-v1-g9H" id="791-lV-RDe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zz-CD-ran" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="657"/>
+        </scene>
+        <!--Message Signer View Controller-->
+        <scene sceneID="0cy-hm-NGL">
+            <objects>
+                <viewController id="tNr-6G-RWH" customClass="MessageSignerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jpP-E4-W78">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGL-KX-pIb" customClass="FlatButton">
+                                <rect key="frame" x="24" y="587" width="136" height="56"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="CANCEL">
+                                    <color key="titleColor" red="0.83921568629999999" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="theme">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="compact" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="declineAction:" destination="tNr-6G-RWH" eventType="touchUpInside" id="Had-iZ-bpk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rv-hF-bz6" customClass="FlatButton">
+                                <rect key="frame" x="175" y="587" width="176" height="56"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="SIGN">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="theme">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="compact" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signAction:" destination="tNr-6G-RWH" eventType="touchUpInside" id="Ow7-dX-sc7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signmessage_logo" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-As-ExC">
+                                <rect key="frame" x="32" y="60" width="208" height="214"/>
+                                <color key="tintColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl7-IL-2Qw">
+                                <rect key="frame" x="32" y="294" width="311" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p2-Xe-moj">
+                                <rect key="frame" x="32" y="354" width="311" height="81.5"/>
+                                <string key="text">Please remember to include your nickname and a specific reason for the message, so someone else cannot re-use it for a different purpose.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S2m-As-ExC" firstAttribute="top" secondItem="jpP-E4-W78" secondAttribute="top" constant="60" id="1b2-I9-P0z"/>
+                            <constraint firstItem="ZGL-KX-pIb" firstAttribute="left" secondItem="U2W-Qh-rvb" secondAttribute="left" constant="24" id="IMP-uL-PUS"/>
+                            <constraint firstItem="nl7-IL-2Qw" firstAttribute="left" secondItem="S2m-As-ExC" secondAttribute="left" id="KFN-kh-U8S"/>
+                            <constraint firstItem="U2W-Qh-rvb" firstAttribute="right" secondItem="7rv-hF-bz6" secondAttribute="right" constant="24" id="M4L-g9-t4T"/>
+                            <constraint firstItem="nl7-IL-2Qw" firstAttribute="top" secondItem="S2m-As-ExC" secondAttribute="bottom" constant="20" id="OOz-fx-OoI"/>
+                            <constraint firstItem="5p2-Xe-moj" firstAttribute="right" secondItem="nl7-IL-2Qw" secondAttribute="right" id="R9P-xK-kOX"/>
+                            <constraint firstItem="U2W-Qh-rvb" firstAttribute="bottom" secondItem="ZGL-KX-pIb" secondAttribute="bottom" constant="24" id="RDW-df-Dre"/>
+                            <constraint firstItem="nl7-IL-2Qw" firstAttribute="leading" secondItem="U2W-Qh-rvb" secondAttribute="leading" constant="32" id="cN3-LH-12m"/>
+                            <constraint firstItem="7rv-hF-bz6" firstAttribute="width" secondItem="ZGL-KX-pIb" secondAttribute="width" constant="40" id="e7E-Vf-zP3"/>
+                            <constraint firstItem="5p2-Xe-moj" firstAttribute="left" secondItem="nl7-IL-2Qw" secondAttribute="left" id="ihr-MH-kz7"/>
+                            <constraint firstItem="7rv-hF-bz6" firstAttribute="left" secondItem="ZGL-KX-pIb" secondAttribute="right" constant="15" id="lFZ-gn-Xn5"/>
+                            <constraint firstItem="7rv-hF-bz6" firstAttribute="bottom" secondItem="ZGL-KX-pIb" secondAttribute="bottom" id="t2P-Fi-84n"/>
+                            <constraint firstItem="5p2-Xe-moj" firstAttribute="top" secondItem="nl7-IL-2Qw" secondAttribute="bottom" constant="12" id="tgB-PF-Zsj"/>
+                            <constraint firstItem="U2W-Qh-rvb" firstAttribute="trailing" secondItem="nl7-IL-2Qw" secondAttribute="trailing" constant="32" id="xsc-CY-JON"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U2W-Qh-rvb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VQC-bn-H9i"/>
+                    <connections>
+                        <outlet property="buttonsWidthConstraint" destination="e7E-Vf-zP3" id="KMe-aW-W0S"/>
+                        <outlet property="contentLeftOffsetConstraint" destination="cN3-LH-12m" id="bF3-y7-4HD"/>
+                        <outlet property="contentRightOffsetConstraint" destination="xsc-CY-JON" id="qsf-GP-jmx"/>
+                        <outlet property="descriptionLabel" destination="5p2-Xe-moj" id="ob9-21-6ff"/>
+                        <outlet property="interbuttonOffsetConstraint" destination="lFZ-gn-Xn5" id="tee-4Z-JLK"/>
+                        <outlet property="logoToTitleYOffsetConstraint" destination="OOz-fx-OoI" id="m61-B1-6Bh"/>
+                        <outlet property="logoTopOffsetConstraint" destination="1b2-I9-P0z" id="QTi-Rr-69R"/>
+                        <outlet property="titleLabel" destination="nl7-IL-2Qw" id="MP4-lg-tpo"/>
+                        <segue destination="Y4n-mg-mQJ" kind="presentation" identifier="MessageToContextPasswordSegueIdentifier" id="zTc-Aq-ZZx"/>
+                        <segue destination="Osz-z3-Lpi" kind="show" identifier="MessageToConfirmedTransactionSegueIdentifier" id="yXB-lP-loE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hV-jd-DNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2538" y="-352"/>
+        </scene>
+        <!--Confirmed Transaction View Controller-->
+        <scene sceneID="qlI-Oq-zsM">
+            <objects>
+                <viewController id="Osz-z3-Lpi" customClass="ConfirmedTransactionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c10-BR-ql5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction is generated and signed. Please continue in MyEtherWallet in your browser in order to send it." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXI-2j-zCW">
+                                <rect key="frame" x="24" y="162.5" width="327" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.1803921568627451" green="0.18823529411764706" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="56" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7P-zT-6NR" customClass="FlatButton">
+                                <rect key="frame" x="24" y="587" width="327" height="56"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="theme">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="compact" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeAction:" destination="V5h-zr-lHt" eventType="touchUpInside" id="Lij-rD-4hj"/>
+                                    <action selector="closeAction:" destination="Osz-z3-Lpi" eventType="touchUpInside" id="Thv-eC-Eo7"/>
+                                    <action selector="declineAction:" destination="XFV-L1-tpZ" eventType="touchUpInside" id="3uG-wU-VuL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue in your browser" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGz-tl-k6o">
+                                <rect key="frame" x="24" y="44" width="243.5" height="95.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.023529411760000001" green="0.30196078430000001" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iHk-H7-tky" firstAttribute="right" secondItem="w7P-zT-6NR" secondAttribute="right" constant="24" id="0yb-d0-buY"/>
+                            <constraint firstItem="tXI-2j-zCW" firstAttribute="top" secondItem="RGz-tl-k6o" secondAttribute="bottom" constant="23" id="1Ho-i9-gPy"/>
+                            <constraint firstItem="RGz-tl-k6o" firstAttribute="leading" secondItem="iHk-H7-tky" secondAttribute="leading" constant="24" id="2fF-aH-xzV"/>
+                            <constraint firstItem="iHk-H7-tky" firstAttribute="bottom" secondItem="w7P-zT-6NR" secondAttribute="bottom" constant="24" id="JmY-GH-gp7"/>
+                            <constraint firstItem="iHk-H7-tky" firstAttribute="trailing" secondItem="tXI-2j-zCW" secondAttribute="trailing" constant="24" id="Kgp-D1-A8l"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RGz-tl-k6o" secondAttribute="trailing" constant="40" id="dhL-KA-DtO"/>
+                            <constraint firstItem="RGz-tl-k6o" firstAttribute="top" secondItem="iHk-H7-tky" secondAttribute="top" constant="44" id="mTE-qf-eBo"/>
+                            <constraint firstItem="tXI-2j-zCW" firstAttribute="leading" secondItem="iHk-H7-tky" secondAttribute="leading" constant="24" id="tDn-v3-yg2"/>
+                            <constraint firstItem="w7P-zT-6NR" firstAttribute="left" secondItem="iHk-H7-tky" secondAttribute="left" constant="24" id="uxL-26-KJr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iHk-H7-tky"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="tXI-2j-zCW" id="YZV-f1-fet"/>
+                        <outlet property="titleLabel" destination="RGz-tl-k6o" id="Au4-X5-k6R"/>
+                        <outlet property="titleTopOffsetConstraint" destination="mTE-qf-eBo" id="TJf-us-bwZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rk5-Jx-RTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537" y="656"/>
+        </scene>
+        <!--Confirmation Navigation View Controller-->
+        <scene sceneID="vvc-tu-thn">
+            <objects>
+                <navigationController storyboardIdentifier="MessageSignerViewController" navigationBarHidden="YES" id="tad-YN-7tp" customClass="ConfirmationNavigationViewController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0vW-3a-naN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tNr-6G-RWH" kind="relationship" relationship="rootViewController" id="eO7-l0-OUR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDV-fm-Hf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766" y="-352"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="signmessage_logo" width="104" height="107"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yXB-lP-loE"/>
+        <segue reference="zTc-Aq-ZZx"/>
+    </inferredMetricsTieBreakers>
+</document>
